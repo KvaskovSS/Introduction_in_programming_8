@@ -83,36 +83,59 @@ int[,] createAndFillMatr(int[,] arr){
 
 //Task 4
 void ThirdDimenshion(){
-  int[,,] arr3D = new int[2, 2, 2];
+    int[,,] arr3D = new int[2, 2, 2];
+    int count = 15;
+    for (int i = 0; i < arr3D.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr3D.GetLength(1); j++)
+        {
+            for (int k = 0; k < arr3D.GetLength(2); k++)
+            {
+              arr3D[k, i, j] += count;
+              count += 3;
+            }
+        }
+    }
 
+    for (int i = 0; i < arr3D.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr3D.GetLength(1); j++)
+        {
+            Console.WriteLine();
+            for (int k = 0; k < arr3D.GetLength(2); k++)
+            {
+                Console.Write($"{arr3D[i, j, k]}({i},{j},{k}) ");
+            }
+        }
+    }
 }
 
 // Task 5
-void Spiral(){
-Console.WriteLine("Введите размер массива");
-int size = Convert.ToInt32(Console.ReadLine());
+// void Spiral(){
+// Console.WriteLine("Введите размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
 
-int[,] arr = new int[size, size];
+// int[,] arr = new int[size, size];
   
-  int num = 1;
-  int i = 0;
-  int j = 0;
+//   int num = 1;
+//   int i = 0;
+//   int j = 0;
 
-  while (num <= size * size)
-  {
-    arr[i, j] = num;
-    if (i <= j + 1 && i + j < size - 1)
-        ++j;
-    else if (i < j && i + j >= size - 1)
-        ++i;
-    else if (i >= j && i + j > size - 1)
-        --j;
-    else
-        --i;
-    ++num;
-  }
-  PrintArray(arr);
-}
+//   while (num <= size * size)
+//   {
+//     arr[i, j] = num;
+//     if (i <= j + 1 && i + j < size - 1)
+//         ++j;
+//     else if (i < j && i + j >= size - 1)
+//         ++i;
+//     else if (i >= j && i + j > size - 1)
+//         --j;
+//     else
+//         --i;
+//     ++num;
+//   }
+//   PrintArray(arr);
+// }
 
 //Task 1
 // Console.WriteLine("Введите количество строк ");
@@ -156,5 +179,8 @@ int[,] arr = new int[size, size];
 // Console.WriteLine($"Произведение первой и второй матриц:");
 // PrintArray(resultMatr);
 
+//Task 4
+ThirdDimenshion();
+
 // Task 5
-Spiral();
+//Spiral();
