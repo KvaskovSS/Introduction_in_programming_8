@@ -65,50 +65,96 @@ int[,] createAndFillMatr(int[,] arr){
 // }
 
 //Task 3
-void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
-{
-  for (int i = 0; i < resultMatrix.GetLength(0); i++)
+// void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
+// {
+//   for (int i = 0; i < resultMatrix.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < resultMatrix.GetLength(1); j++)
+//     {
+//       int sum = 0;
+//       for (int k = 0; k < firstMartrix.GetLength(1); k++)
+//       {
+//         sum += firstMartrix[i,k] * secomdMartrix[k,j];
+//       }
+//       resultMatrix[i,j] = sum;
+//     }
+//   }
+// }
+
+//Task 4
+void ThirdDimenshion(){
+  int[,,] arr3D = new int[2, 2, 2];
+
+}
+
+// Task 5
+void Spiral(){
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+
+int[,] arr = new int[size, size];
+  
+  int num = 1;
+  int i = 0;
+  int j = 0;
+
+  while (num <= size * size)
   {
-    for (int j = 0; j < resultMatrix.GetLength(1); j++)
-    {
-      int sum = 0;
-      for (int k = 0; k < firstMartrix.GetLength(1); k++)
-      {
-        sum += firstMartrix[i,k] * secomdMartrix[k,j];
-      }
-      resultMatrix[i,j] = sum;
-    }
+    arr[i, j] = num;
+    if (i <= j + 1 && i + j < size - 1)
+        ++j;
+    else if (i < j && i + j >= size - 1)
+        ++i;
+    else if (i >= j && i + j > size - 1)
+        --j;
+    else
+        --i;
+    ++num;
   }
+  PrintArray(arr);
 }
 
 //Task 1
-// int[,] arr = createAndFillMatr();
+// Console.WriteLine("Введите количество строк ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[,] arr = new int [m, n];
+// createAndFillMatr(arr);
 // sortLines(arr);
 
 //Task 2
-// int[,] arr = createAndFillMatr();
+// Console.WriteLine("Введите количество строк ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[,] arr = new int [m, n];
+// createAndFillMatr(arr);
 // findSumCol(arr);
 
 //Task 3
-Console.WriteLine("Введите размеры матриц и диапазон случайных значений:");
-Console.WriteLine("Введите число строк 1-й матрицы: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число столбцов 1-й матрицы (и строк 2-й): ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число столбцов 2-й матрицы: ");
-int p = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите размеры матриц и диапазон случайных значений:");
+// Console.WriteLine("Введите число строк 1-й матрицы: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите число столбцов 1-й матрицы (и строк 2-й): ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите число столбцов 2-й матрицы: ");
+// int p = Convert.ToInt32(Console.ReadLine());
 
-int[,] firstMatr = new int[m, n];
-createAndFillMatr(firstMatr);
-Console.WriteLine($"Первая матрица:");
-PrintArray(firstMatr);
+// int[,] firstMatr = new int[m, n];
+// createAndFillMatr(firstMatr);
+// Console.WriteLine($"Первая матрица:");
+// PrintArray(firstMatr);
 
-int[,] secondMatr = new int[n, p];
-createAndFillMatr(secondMatr);
-Console.WriteLine($"Вторая матрица:");
-PrintArray(secondMatr);
+// int[,] secondMatr = new int[n, p];
+// createAndFillMatr(secondMatr);
+// Console.WriteLine($"Вторая матрица:");
+// PrintArray(secondMatr);
 
-int[,] resultMatr = new int[m, p];
-MultiplyMatrix(firstMatr, secondMatr, resultMatr);
-Console.WriteLine($"Произведение первой и второй матриц:");
-PrintArray(resultMatr);
+// int[,] resultMatr = new int[m, p];
+// MultiplyMatrix(firstMatr, secondMatr, resultMatr);
+// Console.WriteLine($"Произведение первой и второй матриц:");
+// PrintArray(resultMatr);
+
+// Task 5
+Spiral();
