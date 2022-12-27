@@ -50,8 +50,30 @@ int[,] createAndFillMatr(){
 // }
 
 //Task 2
+void findSumCol(int[,] arr){
+    Console.WriteLine("Исходный массив ");
+    PrintArray(arr);
 
+    int sum = 0;
+    int minSum = Int32.MaxValue;
+    int minPos = 0;
+    for(int i = 0; i < arr.GetLength(0); i ++){
+        for(int j = 0; j < arr.GetLength(1); j ++){
+            sum += arr[i, j];
+        }   
+        if(sum < minSum){
+            minPos = i;
+            minSum = sum;
+        }
+        sum = 0;
+    }
+     Console.WriteLine($"Строка с наименьшей суммой {minPos + 1}");
+}
 
 //Task 1
 // int[,] arr = createAndFillMatr();
 // sortLines(arr);
+
+//Task 2
+int[,] arr = createAndFillMatr();
+findSumCol(arr);
